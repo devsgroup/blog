@@ -1,4 +1,4 @@
-Developers .group - Blog
+Devsgroup - Blog
 ===================
  
  > " Unidos pela amizade e uma paixão em comum. "
