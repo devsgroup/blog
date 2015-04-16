@@ -2,12 +2,41 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-
-//
+//VARIABLES
+$color-menu: #0F6177;//#25373D;//#43353D;
+//TOP OF BLOG
+.top{}
 .top-intro{
 	background-image: url("../img/bgIntro.jpg");
 	background-size: cover;
-	height: 10em;
+	height: 25em;
+	position: relative;
+}
+.top-brand{
+	left: 32%;
+	position: absolute;
+	top: 25%;
+}
+.top-tags{
+	bottom: 0;
+	position: absolute;
+}
+//MENU
+.navbar{
+	background-color: $color-menu;
+	border: none;
+	border-radius: 0;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover{
+	background-color: #1BBC9B;
+	color: #fff;
+}
+//LIST OF POSTS
+.listPosts a{
+	display: block;
 }
