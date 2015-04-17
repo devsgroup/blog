@@ -1,0 +1,72 @@
+///////////////////////////////////////////////////////////////////////////////////
+/*VARIABLES*/
+///////////////////////////////////////////////////////////////////////////////////
+$total-width: 100%;
+$total-gutter: 2%;
+$total-columns: 12;
+$columns-width: ($total-width/$total-columns);
+///////////////////////////////////////////////////////////////////////////////////
+/*FUNCTIONS*/
+///////////////////////////////////////////////////////////////////////////////////
+@function width($x, $container: $total-columns){
+    $nested-container: (($columns-width - $total-gutter) * $container) + ($container - 1) * $total-gutter;
+    $nested-column: (($columns-width - $total-gutter) * $x) + ($x - 1) * $total-gutter;
+    $width: ($nested-column/$nested-container) * $total-width;
+    @return $width;
+}
+@function gutter($x, $container: $total-columns){
+    $nested-container: (($columns-width - $total-gutter) * $container) + ($container - 1) * $total-gutter;
+    $margin: ($total-gutter / $nested-container) * $total-width;
+    @return $margin / 2;
+}
+@function offset($x, $container: $total-columns){
+    $nested-container: (($columns-width - $total-gutter) * $container) + ($container - 1) * $total-gutter;
+    $nested-column: (($columns-width - $total-gutter) * $x) + ($x - 1) * $total-gutter;
+    $width: ($nested-column/$nested-container) * $total-width;
+    $margin: ($total-gutter / $nested-container) * $total-width;
+    @return $width + $margin;
+}
+///////////////////////////////////////////////////////////////////////////////////
+/*CLEARFIX*/
+///////////////////////////////////////////////////////////////////////////////////
+@mixin clearfix() {
+	*zoom:1;
+
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
+///////////////////////////////////////////////////////////////////////////////////
+/*ROW*/
+///////////////////////////////////////////////////////////////////////////////////
+@mixin row{
+    display: block;
+    width: 100%;
+    @include clearfix();
+    & > *:first-child{
+        margin-left: 0;
+    }
+    & > *:last-child{
+        margin-right: 0;
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////
+/*COLUMN*/
+///////////////////////////////////////////////////////////////////////////////////
+@mixin column($column, $container: $total-columns ){
+    display: inline-block;
+    float: left;
+    margin: 0 gutter($column);
+    width: width($column, $container);
+}
+///////////////////////////////////////////////////////////////////////////////////
+/*OFFSET*/
+///////////////////////////////////////////////////////////////////////////////////
+@mixin offset($offset, $container: $total-columns  ){
+    margin-left: offset($offset, $container)!important;
+}
