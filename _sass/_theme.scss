@@ -5,6 +5,7 @@
 .top-intro{
 	background-image: url("../img/bgIntro.jpg");
 	background-size: cover;
+	background-attachment: fixed;
 	height: 20em;
 	padding-top: 5em;
 	position: relative;
@@ -38,35 +39,13 @@
 .menu > ul > li > a:hover{
 	background-color: lighten($color-dark-blue, 7%);
 }
-/*.navbar{
-	border-radius: 0;
-	//box-shadow: 0 3px 2px lighten(#000, 50%);
-}
-.navbar-default {
-    background-color: $color-dark-blue;
-    border: none;
-}
-.navbar-default .navbar-nav > li{
-	color: #fff;
-}
-.navbar-default .navbar-nav > li > a{
-	color: inherit;
-}
-.navbar-default .navbar-nav > .active > a{
-	background-color: lighten($color-dark-blue, 7%);
-	color: inherit;
-}
-.navbar-default .navbar-nav > .dropdown > a:hover,
-.navbar-default .navbar-nav > .dropdown > a:focus{
-	background-color: lighten($color-dark-blue, 17%);
-	color: inherit;
-}*/
 ///////////////////////////////////////////////////////////////////////////////
 //CONTENT
 ///////////////////////////////////////////////////////////////////////////////
 .content{
-	margin: 1%;
+	margin: 10% 1%;
 	max-width: 98%;
+	min-height: 200em;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //POSTS
@@ -77,17 +56,33 @@
 	padding: 0;
 }
 .post{
-	@include column(4);
-	box-shadow: 1px 1px 2px lighten(#000, 50%);
+	@include column(3);
+	//box-shadow: 1px 1px 2px lighten(#000, 50%);
+	height: 20em;
 	list-style: none;
+	overflow: hidden;
+	position: relative;
 }
 .post-image{
-	width: 100%;
+	left: -170%;
+	position: absolute;
+	top: 0;
+	z-index: -1
 }
-.post-summary{
+.post-link{
+	background-color: transparent;
+	display: block;
+	height: 100%;
+	-webkit-transition: background-color 3s;
+	   -moz-transition: background-color 3s;
+}
+.post-link:hover{
+	background-color: rgba(#000, 10%);
+}
+/*.post-summary{
 	background-color: $color-dark-violet;
 	color: #fff;
 	display: block;
 	padding: 1em;
 	text-decoration: none;
-}
+}*/
