@@ -44,22 +44,28 @@ $columns-width: ($total-width/$total-columns);
 ///////////////////////////////////////////////////////////////////////////////////
 /*ROW*/
 ///////////////////////////////////////////////////////////////////////////////////
-@mixin row{
+@mixin row($width: 100%, $centered: "false"){
     display: block;
-    width: 100%;
+    @if $centered == "true"{
+        margin: 0 auto;
+    }
+    width: $width;
     @include clearfix();
     & > *:first-child{
-        margin-left: 0;
+        margin-left: 0!important;
     }
     & > *:last-child{
-        margin-right: 0;
+        margin-right: 0!important;
     }
+}
+@mixin row-center($width, $container: $total-columns){
+    @include row(width($width, $container), "true");
 }
 ///////////////////////////////////////////////////////////////////////////////////
 /*COLUMN*/
 ///////////////////////////////////////////////////////////////////////////////////
 @mixin column($column, $container: $total-columns ){
-    display: inline-block;
+    display: inline;
     float: left;
     margin: 0 gutter($column);
     width: width($column, $container);

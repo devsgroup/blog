@@ -43,41 +43,46 @@
 //CONTENT
 ///////////////////////////////////////////////////////////////////////////////
 .content{
-	margin: 10% 1%;
-	max-width: 98%;
-	min-height: 200em;
+	@include row-center(10);
 }
 ///////////////////////////////////////////////////////////////////////////////
 //POSTS
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
 	@include row();
-	margin: 0;
+	margin: 1.5em 0;
 	padding: 0;
 }
 .post{
-	@include column(3);
-	//box-shadow: 1px 1px 2px lighten(#000, 50%);
-	height: 20em;
+	@include row();
 	list-style: none;
-	overflow: hidden;
-	position: relative;
+	margin-top: 2.5em;
 }
 .post-image{
-	left: -170%;
-	position: absolute;
-	top: 0;
-	z-index: -1
+	@include column(4); //height: 150px width:340px
+	height: 150px; //remove this propety after cutting the final images
 }
-.post-link{
-	background-color: transparent;
-	display: block;
-	height: 100%;
-	-webkit-transition: background-color 3s;
-	   -moz-transition: background-color 3s;
+.post-info{
+	@include column(8);
+	//@include offset(3);
 }
-.post-link:hover{
-	background-color: rgba(#000, 10%);
+.post-title{
+	font-weight: normal;
+	font-size: 2.5em;
+	margin-bottom: 0.2em;
+	margin-top: 0;
+}
+.post-info p{
+	line-height: 1.25;
+}
+.post-tags{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.post-tags a{
+	color: $color-light-blue;
+	font-size: 0.85em;
 }
 /*.post-summary{
 	background-color: $color-dark-violet;
