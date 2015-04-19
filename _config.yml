@@ -12,3 +12,8 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+permalink: /:title/
+
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
