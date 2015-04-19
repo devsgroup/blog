@@ -46,41 +46,41 @@
 	@include row-center(10);
 }
 ///////////////////////////////////////////////////////////////////////////////
-//POSTS
+//POSTSLIST
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
 	@include row();
 	margin: 1.5em 0;
 	padding: 0;
 }
-.post{
+.listPosts-post{
 	@include row();
 	list-style: none;
 	margin-top: 2.5em;
 }
-.post-image{
+.listPosts-image{
 	@include column(4); //height: 150px width:340px
 	height: 150px; //remove this propety after cutting the final images
 }
-.post-info{
+.listPosts-info{
 	@include column(8);
 	//@include offset(3);
 }
-.post-title{
+.listPosts-title{
 	font-weight: normal;
 	font-size: 2.5em;
 	margin-bottom: 0.2em;
 	margin-top: 0;
 }
-.post-info p{
+.listPosts-info p{
 	line-height: 1.25;
 }
-.post-tags{
+.listPosts-tags{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-.post-tags a{
+.listPosts-tags a{
 	color: $color-light-blue;
 	font-size: 0.85em;
 }
