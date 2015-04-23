@@ -2,7 +2,7 @@
 title: Developers Group
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Um blog cooperativo, criado pelos integrantes de um grupo de amigos desenvolvedores com intuito
+  Um blog cooperativo, criado por grupo de amigos desenvolvedores com intuito
   contínuo de absorver e compartilhar conhecimento.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
