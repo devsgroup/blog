@@ -1,9 +1,26 @@
-///////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 //COLORS
-///////////////////////////////////////////////////////////////////////////////
-$color-dark-blue:   rgb(15,97,119);
-$color-dark-green:  rgb(11,131,137);
-$color-light-blue:  rgb(52,152,219);
-$color-light-green: rgb(27,188,155);
-$color-dark-violet: rgb(142,68,173);
-$color-dark-orange: rgb(211,84,0);
+/////////////////////////////////////////////////////////////////////////////$color-darken-green:  rgb(22, 160, 133);
+$color-dark-green:    rgb(11,131,137);
+$color-light-green:   rgb(27,188,155);
+$color-lighten-green: rgb(46, 204, 113);
+
+$color-dark-blue:     rgb(15,97,119);
+$color-light-blue:    rgb(52,152,219);
+
+$color-dark-violet:   rgb(142, 68, 173);
+$color-light-violet:  rgb(155, 89, 182);
+
+$color-darken-gray:   rgb(44, 62, 80);
+$color-dark-gray:     rgb(52, 73, 94);
+$color-light-gray:    rgb(236, 240, 241);
+$color-lighten-gray:  rgb(236, 240, 241);
+
+$color-dark-yellow:   rgb(243, 156, 18);
+$color-light-yellow:  rgb(241, 196, 15);
+
+$color-dark-orange:   rgb(230, 126, 34);
+$color-light-orange:  rgb(211, 84, 0);
+
+$color-dark-red:      rgb(231, 76, 60);
+$color-light-red:     rgb(192, 57, 43);

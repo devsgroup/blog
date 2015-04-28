@@ -73,6 +73,6 @@ $columns-width: ($total-width/$total-columns);
 ///////////////////////////////////////////////////////////////////////////////////
 /*OFFSET*/
 ///////////////////////////////////////////////////////////////////////////////////
-@mixin offset($offset, $container: $total-columns  ){
+@mixin offset($offset, $container: $total-columns){
     margin-left: offset($offset, $container)!important;
 }

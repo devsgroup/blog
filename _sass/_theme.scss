@@ -1,3 +1,6 @@
+body{
+	background-color: $color-lighten-gray;
+}
 ///////////////////////////////////////////////////////////////////////////////
 //TOP
 ///////////////////////////////////////////////////////////////////////////////
@@ -25,19 +28,22 @@
 	color: #fff;
 	margin: 0;
 	padding: 0;
-}
-.menu > ul > li{
-	display: inline-block;
-	list-style: none;
-}
-.menu > ul > li > a{
-	color: inherit;
-	display: inherit;
-	padding: 1em;
-	text-decoration: none;
-}
-.menu > ul > li > a:hover{
-	background-color: lighten($color-dark-blue, 7%);
+	
+	& > li{
+		display: inline-block;
+		list-style: none;
+
+		& > a{
+			color: inherit;
+			display: inherit;
+			padding: 1em;
+			text-decoration: none;
+
+			&:hover{
+				background-color: lighten($color-dark-blue, 7%);
+			}
+		}
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 //CONTENT
@@ -46,7 +52,7 @@
 	@include row-center(10);
 }
 ///////////////////////////////////////////////////////////////////////////////
-//POSTSLIST
+//POSTS LIST
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
 	@include row();
@@ -60,11 +66,15 @@
 }
 .listPosts-image{
 	@include column(4); //height: 150px width:340px
-	height: 150px; //remove this propety after cutting the final images
+	height: 150px;      //remove this propety after cutting the final images
 }
 .listPosts-info{
 	@include column(8);
 	//@include offset(3);
+	
+	& p{
+		line-height: 1.25;
+	}
 }
 .listPosts-title{
 	font-weight: normal;
@@ -72,22 +82,57 @@
 	margin-bottom: 0.2em;
 	margin-top: 0;
 }
-.listPosts-info p{
-	line-height: 1.25;
-}
 .listPosts-tags{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	
+	& a{
+		color: $color-light-blue;
+		font-size: 0.85em;
+	}
 }
-.listPosts-tags a{
-	color: $color-light-blue;
-	font-size: 0.85em;
+///////////////////////////////////////////////////////////////////////////////
+//AUTHORS LIST
+///////////////////////////////////////////////////////////////////////////////
+.listAuthors{
+	@include column(12);
+
+	h6{
+		@include row-center(6);
+		margin: 1em auto;
+	}
+
+	& > ul{
+		@include row-center(6);
+		padding: 0;
+
+		li{
+			@include column(1);
+			display: inline-block;
+		}
+	}
 }
-/*.post-summary{
-	background-color: $color-dark-violet;
-	color: #fff;
+.listAuthors{
+	a{
+		display: block;
+		-webkit-transition: -webkit-transform 1s ease;
+	}
+	a:hover{
+		-webkit-transform: scale(1.5);
+	}
+	a > img{
+		border-radius: 9999em;
+		width: 100%;
+	}
+}
+///////////////////////////////////////////////////////////////////////////////
+//FOOTER
+///////////////////////////////////////////////////////////////////////////////
+.footer{
+	@include row();
+	border-top: solid #FFFFFF 1px;
+	box-shadow: -1px -1px 0px #BEBEBE;
 	display: block;
-	padding: 1em;
-	text-decoration: none;
-}*/
+	padding: 1em 0;
+}
