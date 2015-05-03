@@ -1,5 +1,9 @@
+
 body{
 	background-color: $color-lighten-gray;
+}
+img{
+	max-width: 100%;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //TOP
@@ -25,9 +29,8 @@ body{
     background-color: $color-dark-blue;
 }
 .menu > ul{
+	@include listUnstyled;
 	color: #fff;
-	margin: 0;
-	padding: 0;
 	
 	& > li{
 		display: inline-block;
@@ -96,43 +99,42 @@ body{
 //AUTHORS LIST
 ///////////////////////////////////////////////////////////////////////////////
 .listAuthors{
-	@include column(12);
-
-	h6{
-		@include row-center(6);
-		margin: 1em auto;
-	}
+	@include row-center(6);
 
 	& > ul{
-		@include row-center(6);
-		padding: 0;
+		@include row();
+		@include listUnstyled();
+	}
+}
+.listAuthors-author{
+	@include column(1);
+	opacity: 0.5;
+	position: relative;
+	-webkit-transition: opacity 1s;
 
-		li{
-			@include column(1);
-			display: inline-block;
+	&:hover{
+		opacity: 1;
+
+		.listAuthors-name{
+			opacity: 1;
 		}
 	}
 }
-.listAuthors{
-	a{
-		display: block;
-		-webkit-transition: -webkit-transform 1s ease;
-	}
-	a:hover{
-		-webkit-transform: scale(1.5);
-	}
-	a > img{
-		border-radius: 9999em;
-		width: 100%;
-	}
+.listAuthors-photo{
+	border-radius: 9999em;
+}
+.listAuthors-name{
+	@include row();
+	font-size: 0.85em;
+	opacity: 0;
+	text-align: center;
+	-webkit-transition: opacity 1s;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
 .footer{
-	@include row();
 	border-top: solid #FFFFFF 1px;
 	box-shadow: -1px -1px 0px #BEBEBE;
-	display: block;
 	padding: 1em 0;
 }
