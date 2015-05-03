@@ -1,6 +1,13 @@
-
+@font-face {
+    font-family: TitleType;
+    src: url("../fonts/OpenSans-Light.ttf");
+}
+@font-face {
+    font-family: TextType;
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
 body{
-	background-color: $color-lighten-gray;
+	font-family: TextType;
 }
 img{
 	max-width: 100%;
@@ -27,9 +34,12 @@ img{
 ///////////////////////////////////////////////////////////////////////////////
 .menu{
     background-color: $color-dark-blue;
+    font-family: TextType;
+    text-transform: uppercase;
 }
 .menu > ul{
 	@include listUnstyled;
+	@include row-center(10);
 	color: #fff;
 	
 	& > li{
@@ -59,40 +69,42 @@ img{
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
 	@include row();
+	list-style: none;
 	margin: 1.5em 0;
 	padding: 0;
-}
-.listPosts-post{
-	@include row();
-	list-style: none;
-	margin-top: 2.5em;
-}
-.listPosts-image{
-	@include column(4); //height: 150px width:340px
-	height: 150px;      //remove this propety after cutting the final images
-}
-.listPosts-info{
-	@include column(8);
-	//@include offset(3);
-	
-	& p{
-		line-height: 1.25;
+
+	ul{
+		@include listUnstyled();
 	}
 }
+.listPosts-post{
+	margin-bottom: 8em;
+}
 .listPosts-title{
-	font-weight: normal;
+	font-family: TitleType;
 	font-size: 2.5em;
 	margin-bottom: 0.2em;
 	margin-top: 0;
 }
 .listPosts-tags{
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	@include listUnstyled();
 	
 	& a{
 		color: $color-light-blue;
 		font-size: 0.85em;
+	}
+}
+.listPosts-summary{
+	@include row();
+	margin-top: 1em;
+
+	& > img{
+		@include column(6); //height: 150px width:340px
+		//height: 150px;      //remove this propety after cutting the final images
+	}
+	& > p{
+		@include column(6);
+		//@include offset(1);	
 	}
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -134,7 +146,5 @@ img{
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
 .footer{
-	border-top: solid #FFFFFF 1px;
-	box-shadow: -1px -1px 0px #BEBEBE;
 	padding: 1em 0;
 }
