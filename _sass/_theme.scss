@@ -99,8 +99,7 @@ img{
 	margin-top: 1em;
 
 	& > img{
-		@include column(6); //height: 150px width:340px
-		//height: 150px;      //remove this propety after cutting the final images
+		@include column(6);
 	}
 	& > p{
 		@include column(6);
