@@ -1,14 +1,18 @@
 # Site settings
-title: Unidos pela amizade e uma paixão em comum.
+title: Developers Group
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Um blog cooperativo, criado por grupo de amigos desenvolvedores com intuito
+  contínuo de absorver e compartilhar conhecimento.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: DevsGroup
+github_username:  DevsGroup
 
 # Build settings
 markdown: kramdown
+permalink: /:title/
+
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
