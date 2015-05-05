@@ -73,7 +73,7 @@ img{
 	margin: 1.5em 0;
 	padding: 0;
 
-	ul{
+	& > ul{
 		@include listUnstyled();
 	}
 }
@@ -86,9 +86,12 @@ img{
 	margin-bottom: 0.2em;
 	margin-top: 0;
 }
+.listPosts-date{
+	color: lighten($color-dark-gray, 30%);
+	font-size: 0.75em;
+}
 .listPosts-tags{
 	@include listUnstyled();
-	
 	& a{
 		color: $color-light-blue;
 		font-size: 0.85em;
@@ -145,5 +148,19 @@ img{
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
 .footer{
+	background-color: $color-dark-yellow;
 	padding: 1em 0;
+	position: relative;
+	&:before{
+		background-color: #fff;
+		content: "";
+		display: block;
+		height: 50px;
+		left: 50%;
+		margin: 0 auto;
+		position: absolute;
+		top: -2em;
+		width: 50px;
+		-webkit-transform: rotate(45deg);
+	}
 }
