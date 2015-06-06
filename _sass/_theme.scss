@@ -1,134 +1,108 @@
-@font-face {
-    font-family: TitleType;
-    src: url("../fonts/OpenSans-Light.ttf");
-}
-@font-face {
-    font-family: TextType;
-    src: url("../fonts/OpenSans-Regular.ttf");
+
+///////////////////////////////////////////////////////////////////////////////
+//TAGS
+///////////////////////////////////////////////////////////////////////////////
+*{
+	margin: 0;
+	padding: 0;
 }
 body{
-	font-family: TextType;
+	font-size: 1em;    //16px
+	line-height: 1.5em //24px
 }
-img{
-	max-width: 100%;
+p{
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 1.5em 0;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //TOP
 ///////////////////////////////////////////////////////////////////////////////
-.top{}
-.top-intro{
-	background-image: url("../img/bgIntro.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-	height: 20em;
-	padding-top: 5em;
-	position: relative;
+.top{
+	background-image: url("/img/bgintro.jpg");
+	height: 27em;
 }
 .top-brand{
-	display: block;
-	margin: 0 auto;
-	width: 500px;
+	@include row-center(5);
+	padding-top: 7em;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //MENU
 ///////////////////////////////////////////////////////////////////////////////
 .menu{
-    background-color: $color-dark-blue;
-    font-family: TextType;
-    text-transform: uppercase;
-}
-.menu > ul{
-	@include listUnstyled;
-	@include row-center(10);
-	color: #fff;
-	
-	& > li{
+	background-color: $color-dark-blue;
+	& > ul{
+		@include row-center(6);
+	}
+	li{
 		display: inline-block;
-		list-style: none;
+	}
+	a{
+		color: #fff;
+		display: block;
+		padding: 0.75em;
+		text-decoration: none;
 
-		& > a{
-			color: inherit;
-			display: inherit;
-			padding: 1em;
-			text-decoration: none;
-
-			&:hover{
-				background-color: lighten($color-dark-blue, 7%);
-			}
+		&:hover{
+			background-color: $color-lighten-green;
 		}
 	}
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 //CONTENT
 ///////////////////////////////////////////////////////////////////////////////
 .content{
-	@include row-center(10);
+	@include row-center(6);
 }
 ///////////////////////////////////////////////////////////////////////////////
-//POSTS LIST
+//LIST POSTS
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
-	@include row();
-	list-style: none;
-	margin: 1.5em 0;
-	padding: 0;
-
-	& > ul{
-		@include listUnstyled();
+	img{
+		height: 240px;
+		margin-bottom: -0.5em;
+		width: 100%;
 	}
 }
 .listPosts-post{
-	margin-bottom: 8em;
+	list-style: none;
 }
 .listPosts-title{
-	font-family: TitleType;
-	font-size: 2.5em;
-	margin-bottom: 0.2em;
-	margin-top: 0;
+	font-size: 2em;
+	font-weight: lighter;
+	line-height: 0.375em;
+	margin-bottom: 0.375em;
+	margin-top: 3em;
 }
 .listPosts-date{
-	color: lighten($color-dark-gray, 30%);
 	font-size: 0.75em;
+	line-height: 1em;
+	margin: 1em 0;
 }
 .listPosts-tags{
-	@include listUnstyled();
-	& a{
-		color: $color-light-blue;
-		font-size: 0.85em;
-	}
+	font-size: 0.75em;
+	line-height: 1em;
+	list-style: none;
+	margin: 1em 0;
 }
-.listPosts-summary{
-	@include row();
-	margin-top: 1em;
-
-	& > img{
-		@include column(6);
-	}
-	& > p{
-		@include column(6);
-		//@include offset(1);	
-	}
+.listPosts-summary p{
 }
 ///////////////////////////////////////////////////////////////////////////////
 //AUTHORS LIST
 ///////////////////////////////////////////////////////////////////////////////
 .listAuthors{
-	@include row-center(6);
-
-	& > ul{
-		@include row();
-		@include listUnstyled();
-	}
+	@include row-center(8);
+}
+.listAuthors-title{
+	font-size: 0.75em;
+	line-height: 1em;
+	margin: 1em 0;
 }
 .listAuthors-author{
 	@include column(1);
-	opacity: 0.5;
 	position: relative;
-	-webkit-transition: opacity 1s;
-
 	&:hover{
-		opacity: 1;
-
 		.listAuthors-name{
 			opacity: 1;
 		}
@@ -136,31 +110,21 @@ img{
 }
 .listAuthors-photo{
 	border-radius: 9999em;
+	width: 100%;
 }
 .listAuthors-name{
-	@include row();
-	font-size: 0.85em;
+	display: block;
+	font-size: 0.75em;
+	line-height: 0.75em;
+	margin-bottom: 0.75em;
+	margin-top: 0.375em;
 	opacity: 0;
 	text-align: center;
-	-webkit-transition: opacity 1s;
+	-webkit-transition: 1s opacity;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
 .footer{
-	background-color: $color-dark-yellow;
-	padding: 1em 0;
-	position: relative;
-	&:before{
-		background-color: #fff;
-		content: "";
-		display: block;
-		height: 50px;
-		left: 50%;
-		margin: 0 auto;
-		position: absolute;
-		top: -2em;
-		width: 50px;
-		-webkit-transform: rotate(45deg);
-	}
+	border-top: solid 1px $color-lighten-gray;
 }

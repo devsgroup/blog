@@ -10,12 +10,19 @@
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <!-- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" /> -->
+    <script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js">
+    </script>
+    <script>
+      window.onload = function() {
+          baseliner = new Baseliner(24);
+      }
+    </script>
   </head>
   <body>
     <header class="top">
       <div class="top-intro">
         <img class="top-brand" src="/img/brand.png" alt="brand of group">
-        <!-- <div class="top-tags">brands of html5, css3, js, gulp, bower, grunt, whatever</div> -->
+        <!-- <div class="top-tags">brands of html5, css3, js, gulp, bower, grunt, whatever</div>-->
       </div>
     </header>
     <nav class="menu">
@@ -74,10 +81,6 @@
           <li class="listAuthors-author">
             <a href=""><img src="/img/authors/lucas.png" alt="" class="listAuthors-photo"></a>
             <span class="listAuthors-name">lucas</span>
-          </li>
-          <li class="listAuthors-author">
-            <a href=""><img src="/img/authors/marcus.jpg" alt="" class="listAuthors-photo"></a>
-            <span class="listAuthors-name">marcus</span>
           </li>
         </ul>
       </nav>
