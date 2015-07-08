@@ -1,9 +1,6 @@
 @mixin debug($color: red){
 	border: solid 1px $color;
 }
-@mixin verticalRhythm($font-size: $font-size-base, $multiply: 1em){
-	font-size: $font-size;
-	line-height: ($line-height-base/$font-size) * $multiply;
-	margin-bottom: ($line-height-base/$font-size) * $multiply;
-	margin-top: ($line-height-base/$font-size) * $multiply;
+@function baseline($font-size, $line-height, $multiply: 1){
+	@return (($line-height / $font-size) * $multiply) + em;
 }

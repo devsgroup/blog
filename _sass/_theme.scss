@@ -7,47 +7,43 @@
 	padding: 0;
 }
 body{
-	font-size: 1em;    //16px
-	line-height: 1.5em //24px
+	font-size:   62.5%;
+	font-family: helvetica;
+	line-height: 2em;
+}
+h1{
+	font-size: 3.2em;
+	line-height: (2/3.2) * 2 + em;
+	margin: 0 0 (2/3.2) * 2 + em 0;
 }
 p{
-	font-size: 1em;
-	line-height: 1.5em;
-	margin: 1.5em 0;
+	font-size: 1.6em;
+	line-height: (2/1.6) + em;
+	margin-bottom: (2/1.6) + em;
 }
+a{
+	color: $color-light-blue;
+	outline: none;
+}
+img{
+	border: none;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 //TOP
 ///////////////////////////////////////////////////////////////////////////////
 .top{
 	background-image: url("/img/bgintro.jpg");
-	height: 27em;
+	height: 20em;
 }
 .top-brand{
-	@include row-center(5);
-	padding-top: 7em;
+	display: block;
+	margin: 0 auto;
+	width: 50em;
 }
 ///////////////////////////////////////////////////////////////////////////////
 //MENU
 ///////////////////////////////////////////////////////////////////////////////
-.menu{
-	background-color: $color-dark-blue;
-	& > ul{
-		@include row-center(6);
-	}
-	li{
-		display: inline-block;
-	}
-	a{
-		color: #fff;
-		display: block;
-		padding: 0.75em;
-		text-decoration: none;
-
-		&:hover{
-			background-color: $color-lighten-green;
-		}
-	}
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 //CONTENT
@@ -59,72 +55,63 @@ p{
 //LIST POSTS
 ///////////////////////////////////////////////////////////////////////////////
 .listPosts{
-	img{
-		height: 240px;
-		margin-bottom: -0.5em;
-		width: 100%;
-	}
 }
 .listPosts-post{
 	list-style: none;
 }
 .listPosts-title{
-	font-size: 2em;
+	font-size: 3.2em;
 	font-weight: lighter;
-	line-height: 0.375em;
-	margin-bottom: 0.375em;
-	margin-top: 3em;
+	line-height: (2/3.2) + em;
+	margin-bottom: (2/3.2) + em;
+	margin-top: (2/3.2) * 3 + em;
 }
 .listPosts-date{
-	font-size: 0.75em;
-	line-height: 1em;
-	margin: 1em 0;
+	display: inline-block;
+	float: left;
+	font-size: 1.2em;
+	line-height: (2/1.2) + em;
+	margin-bottom: (2/1.2) + em;
 }
 .listPosts-tags{
-	font-size: 0.75em;
-	line-height: 1em;
+	display: inline-block;
+	float: left;
+	font-size: 1.2em;
+	line-height: (2/1.2) + em;
 	list-style: none;
-	margin: 1em 0;
+	margin-left: 1em;
+	margin-bottom: (2/1.2) + em;
+
+	a{
+		color: $color-dark-blue;
+	}
 }
-.listPosts-summary p{
+.listPosts-summary{
+	img{
+		//tamanho da imagem 
+		height: 18em;
+		margin-bottom: 2em;
+		vertical-align: bottom;
+		width: 627px;
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 //AUTHORS LIST
 ///////////////////////////////////////////////////////////////////////////////
 .listAuthors{
-	@include row-center(8);
 }
 .listAuthors-title{
-	font-size: 0.75em;
-	line-height: 1em;
-	margin: 1em 0;
 }
 .listAuthors-author{
-	@include column(1);
-	position: relative;
-	&:hover{
-		.listAuthors-name{
-			opacity: 1;
-		}
-	}
 }
 .listAuthors-photo{
-	border-radius: 9999em;
-	width: 100%;
+
 }
 .listAuthors-name{
-	display: block;
-	font-size: 0.75em;
-	line-height: 0.75em;
-	margin-bottom: 0.75em;
-	margin-top: 0.375em;
-	opacity: 0;
-	text-align: center;
-	-webkit-transition: 1s opacity;
+
 }
 ///////////////////////////////////////////////////////////////////////////////
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
 .footer{
-	border-top: solid 1px $color-lighten-gray;
 }
