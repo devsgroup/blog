@@ -7,6 +7,7 @@
 	padding: 0;
 }
 body{
+	color: #333;
 	font-size:   62.5%;
 	font-family: helvetica;
 	line-height: 2em;
@@ -51,6 +52,11 @@ img{
 .content{
 	@include row-center(6);
 }
+
+///////////////////////////////////////////////////////////////////////////////
+//BUTTONS
+///////////////////////////////////////////////////////////////////////////////
+
 ///////////////////////////////////////////////////////////////////////////////
 //LIST POSTS
 ///////////////////////////////////////////////////////////////////////////////
@@ -60,13 +66,15 @@ img{
 	list-style: none;
 }
 .listPosts-title{
+	font-family: 'Lora';
 	font-size: 3.2em;
-	font-weight: lighter;
+	font-weight: normal;
 	line-height: (2/3.2) + em;
 	margin-bottom: (2/3.2) + em;
 	margin-top: (2/3.2) * 3 + em;
 }
 .listPosts-date{
+	color: lighten(#333, 40%);
 	display: inline-block;
 	float: left;
 	font-size: 1.2em;
@@ -75,43 +83,38 @@ img{
 }
 .listPosts-tags{
 	display: inline-block;
-	float: left;
 	font-size: 1.2em;
 	line-height: (2/1.2) + em;
 	list-style: none;
 	margin-left: 1em;
 	margin-bottom: (2/1.2) + em;
 
+	li{
+		display: inline-block;
+	}
+
 	a{
-		color: $color-dark-blue;
+		background-color: $color-light-green;
+		//border: solid 0.1em $color-light-green;
+		border-radius: 0.25em;
+		color: #fff;
+		padding: 0.25em 0.5em;
 	}
 }
 .listPosts-summary{
 	img{
-		//tamanho da imagem 
-		height: 18em;
 		margin-bottom: 2em;
 		vertical-align: bottom;
+		
+		height: 180px;
 		width: 627px;
 	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 //AUTHORS LIST
 ///////////////////////////////////////////////////////////////////////////////
-.listAuthors{
-}
-.listAuthors-title{
-}
-.listAuthors-author{
-}
-.listAuthors-photo{
 
-}
-.listAuthors-name{
-
-}
 ///////////////////////////////////////////////////////////////////////////////
 //FOOTER
 ///////////////////////////////////////////////////////////////////////////////
-.footer{
-}
+
