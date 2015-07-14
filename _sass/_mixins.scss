@@ -1,6 +1,16 @@
 @mixin debug($color: red){
 	border: solid 1px $color;
 }
-@function baseline($font-size, $line-height, $multiply: 1){
-	@return (($line-height / $font-size) * $multiply) + em;
+@mixin title-h2(){
+	font-family: 'Lora';
+	font-size: 3.2em;
+	font-weight: normal;
+	line-height: (2/3.2) * 2 + em;
+	margin-top: (2/3.2) * 3 + em;	
+}
+@mixin image(){
+	margin-bottom: 2em;
+	vertical-align: bottom;
+	height: 180px;
+	width: 627px;
 }

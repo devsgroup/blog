@@ -2,14 +2,19 @@
 layout: default
 ---
 <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
+	<header class="post-header">
+		<h1 class="post-title">{{ page.title }}</h1>
+		<div class="post-date">{{ page.date | date: "%-d %B %Y" }}</div>
+	<!--     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p> -->
+	</header>
+		{{ content }}
+	<footer>
+		<img class="post-imageAuthor" src="/img/authors/yan.jpg" alt="{{page.author}}">
+		<div class="post-infoAuthor">
+			<h6 class="post-nameAuthor">{{page.author}}</h6>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus aut corporis repellat sed nobis vitae, tempore ad quaerat, dignissimos quam est perferendis ullam eveniet omnis? Reprehenderit eum atque at aut.
+			</p>
+		</div>
+	</footer>
 </div>
