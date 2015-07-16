@@ -44,11 +44,8 @@ $columns-width: ($total-width/$total-columns);
 ///////////////////////////////////////////////////////////////////////////////////
 /*ROW*/
 ///////////////////////////////////////////////////////////////////////////////////
-@mixin row($width: 100%, $centered: "false"){
+@mixin row($width: 100%){
     display: block;
-    @if $centered == "true"{
-        margin: 0 auto;
-    }
     width: $width;
     @include clearfix();
     & > *:first-child{
@@ -57,9 +54,6 @@ $columns-width: ($total-width/$total-columns);
     & > *:last-child{
         margin-right: 0!important;
     }
-}
-@mixin row-center($width, $container: $total-columns){
-    @include row(width($width, $container), "true");
 }
 ///////////////////////////////////////////////////////////////////////////////////
 /*COLUMN*/
