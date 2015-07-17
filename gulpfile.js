@@ -6,6 +6,8 @@ var imagemin     = require('gulp-imagemin');
 var cp           = require('child_process');
 var uglify 		 = require('gulp-uglify');
 var concat 		 = require('gulp-concat');
+var os           = require('os');
+var isWindows    = os.type() == 'Windows_NT';
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -14,10 +16,12 @@ var messages = {
 //Monta o site do Jekyll
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    //Linux/Mac
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'}).on('close', done);
-	//WINDOWS
-    //return cp.exec('jekyll', ['build'], {stdio: 'inherit'}).on('close', done);
+
+    if (isWindows) {
+        return cp.exec('jekyll', ['build'], {stdio: 'inherit'}).on('close', done);
+    } else {
+        return cp.spawn('jekyll', ['build'], {stdio: 'inherit'}).on('close', done);
+    }
 });
 
 //Refaz o site e atualiza a página
